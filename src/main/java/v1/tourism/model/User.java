@@ -49,7 +49,7 @@ public class User {
         return this.age;
     }
 
-    public String getPasString(){
+    public String getPassword(){
         return this.password;
     }
 
@@ -71,6 +71,10 @@ public class User {
 
     public void setPassword(String password){
         this.password=password;
+    }
+
+    public void setEmail(String email){
+        this.email=email;
     }
     
 
