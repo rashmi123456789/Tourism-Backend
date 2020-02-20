@@ -12,9 +12,8 @@ public class Itinerary {
     private String id;
 
     private String name;
-    private String imageId;
+    private String image_name;
     private String description;
-    private double[] mapLatLan;
     private int dayNum;
     private String destination;
     private String[] activities;
@@ -23,13 +22,12 @@ public class Itinerary {
     public Itinerary() {
     }
 
-    public Itinerary(String name, String imageId,
-     String description, double[] mapLatLan, int dayNum,
+    public Itinerary(String name, String image_name,
+     String description, int dayNum,
       String destination, String[] activities) {
         this.name = name;
-        this.imageId = imageId;
+        this.image_name = image_name;
         this.description = description;
-        this.mapLatLan = mapLatLan;
         this.dayNum = dayNum;
         this.destination = destination;
         this.activities = activities;
@@ -51,12 +49,12 @@ public class Itinerary {
         this.name = name;
     }
 
-    public String getImageId() {
-        return this.imageId;
+    public String getImageName() {
+        return this.image_name;
     }
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+    public void setImageName(String image_name) {
+        this.image_name = image_name;
     }
 
     public String getDescription() {
@@ -65,14 +63,6 @@ public class Itinerary {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public double[] getMapLatLan() {
-        return this.mapLatLan;
-    }
-
-    public void setMapLatLan(double[] mapLatLan) {
-        this.mapLatLan = mapLatLan;
     }
 
     public int getDayNum() {
@@ -109,9 +99,8 @@ public class Itinerary {
         Itinerary itinerary = (Itinerary) o;
         return Objects.equals(id, itinerary.id)
          && Objects.equals(name, itinerary.name)
-         && Objects.equals(imageId, itinerary.imageId)
+         && Objects.equals(image_name, itinerary.image_name)
          && Objects.equals(description, itinerary.description)
-         && Objects.equals(mapLatLan, itinerary.mapLatLan)
          && dayNum == itinerary.dayNum
          && Objects.equals(destination, itinerary.destination)
          && Objects.equals(activities, itinerary.activities);
@@ -119,7 +108,7 @@ public class Itinerary {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageId, description, mapLatLan, dayNum, destination, activities);
+        return Objects.hash(id, name, image_name, description, dayNum, destination, activities);
     }
 
     @Override
@@ -127,9 +116,8 @@ public class Itinerary {
         return "{" +
             " id='" + getId() + "'" +
             ", name='" + getName() + "'" +
-            ", imageId='" + getImageId() + "'" +
+            ", image_name='" + getImageName() + "'" +
             ", description='" + getDescription() + "'" +
-            ", mapLatLan='" + getMapLatLan() + "'" +
             ", dayNum='" + getDayNum() + "'" +
             ", destination='" + getDestination() + "'" +
             ", activities='" + getActivities() + "'" +

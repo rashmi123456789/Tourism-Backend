@@ -57,6 +57,8 @@ class PackageController {
             packagesInDb.setExclusions(packages.getExclusions());
             packagesInDb.setInclusions(packages.getInclusions());
             packagesInDb.setName(packages.getName());
+            packagesInDb.setImageName(packages.getImageName());
+            packagesInDb.setMapId(packages.getMapId());
 
             return packagesRepository.save(packagesInDb);
         })

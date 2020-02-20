@@ -17,6 +17,8 @@ public class Package{
     private String[] itineraryIdArray;
     private String[] inclusions;
     private String[] exclusions;
+    private String image_name; 
+    private String mapId;
 
 
     public Package() {
@@ -24,13 +26,15 @@ public class Package{
 
 
     public Package( double totalPrice, String name,
-     String description, String[] itineraryIdArray, String[] inclusions, String[] exclusions) {
+     String description, String[] itineraryIdArray, String[] inclusions, String[] exclusions,String image_name, String mapId) {
         this.totalPrice = totalPrice;
         this.name = name;
         this.description = description;
         this.itineraryIdArray = itineraryIdArray;
         this.inclusions = inclusions;
         this.exclusions = exclusions;
+        this.image_name = image_name;
+        this.mapId = mapId; 
     }
 
     public String getId() {
@@ -49,12 +53,12 @@ public class Package{
         this.totalPrice = totalPrice;
     }
 
-    public String getName() {
-        return this.name;
+    public String getImageName() {
+        return this.image_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImageName(String image_name) {
+        this.image_name = image_name;
     }
 
     public String getDescription() {
@@ -89,6 +93,22 @@ public class Package{
         this.exclusions = exclusions;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String mapId) {
+        this.mapId = mapId;
+    }
+
+    public String getMapId() {
+        return this.mapId;
+    }
+
+    public void setMapId(String mapId) {
+        this.mapId = mapId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -102,12 +122,14 @@ public class Package{
          && Objects.equals(description, p.description)
          && Objects.equals(itineraryIdArray, p.itineraryIdArray)
          && Objects.equals(inclusions, p.inclusions)
-         && Objects.equals(exclusions, p.exclusions);
+         && Objects.equals(exclusions, p.exclusions)
+         && Objects.equals(image_name, p.image_name)
+         && Objects.equals(mapId, p.mapId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, totalPrice, name, description, itineraryIdArray, inclusions, exclusions);
+        return Objects.hash(id, totalPrice, name, description, itineraryIdArray, inclusions, exclusions, image_name, mapId);
     }
 
     @Override
@@ -120,6 +142,8 @@ public class Package{
             ", itineraryIdArray='" + getItineraryIdArray() + "'" +
             ", inclusions='" + getInclusions() + "'" +
             ", exclusions='" + getExclusions() + "'" +
+            ", image_name='" + getImageName() + "'" +
+            ", mapId='" + getMapId() + "'" +
             "}";
     }
     

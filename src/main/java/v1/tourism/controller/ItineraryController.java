@@ -52,12 +52,10 @@ class ItineraryController {
         return itineraryRepository.findById(itineraryId)
         .flatMap(itineraryInDb->{
             itineraryInDb.setDescription(itinerary.getDescription());
-            itineraryInDb.setImageId(itinerary.getImageId());
-            itineraryInDb.setMapLatLan(itinerary.getMapLatLan());
             itineraryInDb.setActivities(itinerary.getActivities());
             itineraryInDb.setDayNum(itinerary.getDayNum());
             itineraryInDb.setDestination(itinerary.getDestination());
-            itineraryInDb.setId(itinerary.getImageId());
+            itineraryInDb.setImageName(itinerary.getImageName());
             itineraryInDb.setName(itinerary.getName());
 
             return itineraryRepository.save(itineraryInDb);
